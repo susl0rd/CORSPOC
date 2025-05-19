@@ -6,11 +6,15 @@
     <script>
       fetch("https://tw.autos.yahoo.com", {
         method: "GET",
-        credentials: "include"
+        credentials: "include",
+        headers: {
+          "X-Pwn": "cors-test"
+        }
       })
       .then(response => response.text())
       .then(data => document.getElementById("output").innerText = data)
       .catch(err => document.getElementById("output").innerText = "Error: " + err);
+
     </script>
   </body>
 </html>
