@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      fetch("https://tw.autos.yahoo.com/", {
+        method: "GET",
+        credentials: "include"
+      }).then(response => response.text())
+        .then(data => {
+          document.body.innerText = data;
+        }).catch(err => {
+          document.body.innerText = 'Error: ' + err;
+        });
+    </script>
+  </body>
+</html>
